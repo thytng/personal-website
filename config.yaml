@@ -1,0 +1,14 @@
+baseurl: "/"
+title: "Thy Nguyen"
+theme: hugo-theme-console
+languageCode: en-us
+params:
+  animateStyle: animated zoomIn fast
+  navlinks:
+    - name: about/
+      url: about/
+    - name: posts/
+      url: posts/
+    - name: github/
+      url: "https://github.com/thytng"
+  titleCutting: no

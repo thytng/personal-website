@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<h1>About</h1>
+
+<div class="about">
+Hello and welcome! My name is Thy Nguyen (she/her) and I am a senior Applied Mathematics and Statistics major at Macalester College.  <a href="about/">(more)</a>
+</div>
+
+<br>
+
+<h1>Latest posts</h1>
+
+<div class="posts-list">
+{{ with .Site.GetPage "/posts" }}
+    {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
+        <div class="post">
+            <p>
+                <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
+                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+                {{ .Summary }}
+            </p>
+        </div>    
+    {{ end }}
+{{ end }}
+</div>
+
+<br>
+
+<h1>Github page</h1>
+
+<div class="github-page">
+    You can check out my Github page and all of my public repositories <a href="https://github.com/thytng">here</a>.
+</div>
+
+{{ end }}
